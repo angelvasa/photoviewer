@@ -118,6 +118,24 @@ public class PhotoActivity extends Activity {
 
     }
 
+    @Override
+    protected void onPause() {
+        finish();
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        finish();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        finish();
+        super.onDestroy();
+    }
+
     /**
      * Find and Connect Views
      */
@@ -201,7 +219,7 @@ public class PhotoActivity extends Activity {
 
                                 @Override
                                 public void onError() {
-                                    Toast.makeText(getActivity(), "Error loading image.", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(PhotoActivity.this.getActivity(), "Error loading image.", Toast.LENGTH_LONG).show();
 
                                     finish();
                                 }
